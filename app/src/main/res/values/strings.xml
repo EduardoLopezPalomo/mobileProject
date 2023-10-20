@@ -1,3 +1,22 @@
 <resources>
     <string name="app_name">MyApplication2</string>
+
+    <string-array name="items">
+        <item>peach</item>
+        <item>tomato</item>
+        <item>apple</item>
+        <item>banana</item>
+    </string-array>
+    <string-array name="prices">
+        <item>$0.5</item>
+        <item>$0.76</item>
+        <item>$1.34</item>
+        <item>$0.87</item>
+    </string-array>
+    <string-array name="descriptions">
+        <item>Fresh peaches from Georgia</item>
+        <item>Fresh tomatoes from Spain</item>
+        <item>Fresh apples from China</item>
+        <item>Fresh bananas from Canarias</item>
+    </string-array>
 </resources>
