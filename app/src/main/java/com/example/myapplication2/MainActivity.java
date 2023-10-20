@@ -6,7 +6,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
@@ -17,11 +16,12 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         Button startBtn = findViewById(R.id.StartButton);
+        TextView tittle = findViewById(R.id.tittleText);
+        tittle.setText("Your sales in Amazon");
         startBtn.setOnClickListener( new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent startIntent = new Intent(getApplicationContext(), SecondActivity.class);
-                startIntent.putExtra("id1","Hello world");
+                Intent startIntent = new Intent(getApplicationContext(),SecondActivity.class );
                 startActivity(startIntent);
             }
         });

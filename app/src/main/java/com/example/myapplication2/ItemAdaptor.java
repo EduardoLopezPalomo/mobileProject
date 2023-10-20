@@ -21,6 +21,18 @@ public class ItemAdaptor extends BaseAdapter{
         descriptions = d;
         mInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
+    public ItemAdaptor(Context context, String i, String p, String d){
+        String[] auxI = new String[1];
+        String[] auxP = new String[1];
+        String[] auxD = new String[1];
+        auxI[0] = i;
+        auxP[0]= p;
+        auxD[0] = d;
+        items = auxI;
+        prices = auxP;
+        descriptions = auxD;
+        mInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+    }
     @Override
     public int getCount() {
         return items.length;

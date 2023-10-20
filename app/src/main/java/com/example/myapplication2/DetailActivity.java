@@ -8,6 +8,7 @@ import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.view.Display;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 public class DetailActivity extends AppCompatActivity {
 
@@ -17,19 +18,19 @@ public class DetailActivity extends AppCompatActivity {
         setContentView(R.layout.activity_detail);
 
         Intent in = getIntent();
-        int index = in.getIntExtra("com.example.myapplication2.Index", -1);
-        if(index > -1){
-            int pic = getImg(index);
-            ImageView img = findViewById(R.id.imageView);
-            scaleImg(img,pic);
-        }
+        String item = in.getStringExtra("com.example.myapplication2.Item");
+        int pic = getImg(item);
+        ImageView img = findViewById(R.id.imageView);
+        scaleImg(img,pic);
+
     }
 
-    private int getImg(int index){
-        switch (index){
-            case 0: return R.drawable.example1;
-            case 1 : return R.drawable.example2;
-            case 2 : return R.drawable.example3;
+    private int getImg(String item){
+        switch (item){
+            case "peach": return R.drawable.peach;
+            case "tomato": return R.drawable.tomato;
+            case "apple": return R.drawable.apple;
+            case "banana": return R.drawable.banana;
             default: return -1;
         }
     }
