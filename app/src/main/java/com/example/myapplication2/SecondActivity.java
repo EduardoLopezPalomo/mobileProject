@@ -23,7 +23,9 @@ public class SecondActivity extends AppCompatActivity {
     String item;
     Boolean itemNotSearched;
     String[] prices;
+    String cost;
     String[] descriptions;
+    String description;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,10 +52,14 @@ public class SecondActivity extends AppCompatActivity {
                 if(itemNotSearched) {
                     Intent showDetailActivity = new Intent(getApplicationContext(), DetailActivity.class);
                     showDetailActivity.putExtra("com.example.myapplication2.Item", items[i]);
+                    showDetailActivity.putExtra("com.example.myapplication2.Price",prices[i]);
+                    showDetailActivity.putExtra("com.example.myapplication2.Desc",descriptions[i]);
                     startActivity(showDetailActivity);
                 }else {
                     Intent showDetailActivity = new Intent(getApplicationContext(), DetailActivity.class);
                     showDetailActivity.putExtra("com.example.myapplication2.Item", item);
+                    showDetailActivity.putExtra("com.example.myapplication2.Price",cost);
+                    showDetailActivity.putExtra("com.example.myapplication2.Desc",description);
                     startActivity(showDetailActivity);
                 }
             }
@@ -64,9 +70,8 @@ public class SecondActivity extends AppCompatActivity {
             public boolean onQueryTextSubmit(String s) {
                 for (int i = 0; i < items.length; i++) {
                     if (items[i].equals(s)) {
-                        item = items[i];
-                        itemNotSearched = false;
-                        ItemAdaptor itemAdaptor = new ItemAdaptor(context, item, prices[i], descriptions[i]);
+                        setVariables(i);
+                        ItemAdaptor itemAdaptor = new ItemAdaptor(context, item, cost, description);
                         myListView.setAdapter(itemAdaptor);
                         text.setText("");
                         i = items.length;
@@ -85,5 +90,12 @@ public class SecondActivity extends AppCompatActivity {
                 return false;
             }
         });
+    }
+
+    private void setVariables(int i){
+        item = items[i];
+        cost = prices[i];
+        description = descriptions[i];
+        itemNotSearched = false;
     }
 }

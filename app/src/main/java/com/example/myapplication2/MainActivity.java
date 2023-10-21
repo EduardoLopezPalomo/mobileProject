@@ -15,7 +15,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Button startBtn = findViewById(R.id.StartButton);
+        Button startBtn = findViewById(R.id.LoginButton);
         TextView tittle = findViewById(R.id.tittleText);
         tittle.setText("Your sales in Amazon");
         startBtn.setOnClickListener( new View.OnClickListener() {

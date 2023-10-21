@@ -19,10 +19,18 @@ public class DetailActivity extends AppCompatActivity {
 
         Intent in = getIntent();
         String item = in.getStringExtra("com.example.myapplication2.Item");
+        String price = in.getStringExtra("com.example.myapplication2.Price");
+        String desc = in.getStringExtra("com.example.myapplication2.Desc");
         int pic = getImg(item);
         ImageView img = findViewById(R.id.imageView);
-        scaleImg(img,pic);
+        TextView itemText = findViewById(R.id.itemTextView);
+        TextView priceText = findViewById(R.id.costTextView);
+        TextView descText = findViewById(R.id.descriptionText);
 
+        itemText.setText(item);
+        priceText.setText(price);
+        descText.setText(desc);
+        scaleImg(img,pic);
     }
 
     private int getImg(String item){
