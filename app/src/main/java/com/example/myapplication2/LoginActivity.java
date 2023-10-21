@@ -11,8 +11,8 @@ import android.widget.TextView;
 
 public class LoginActivity extends AppCompatActivity {
 
-    private String username;
-    private String password;
+    private static String username;
+    private static String password;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,23 +22,30 @@ public class LoginActivity extends AppCompatActivity {
         EditText passwordtext = findViewById(R.id.PasswordText);
         Button login = findViewById(R.id.loginButton);
 
-        username =name.getText().toString();
-        password = passwordtext.getText().toString();
-
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent loginIntent = new Intent(getApplicationContext(), SecondActivity.class );
+                setUsername(name.getText().toString());
+                setPassword(passwordtext.getText().toString());
+                Intent loginIntent = new Intent(getApplicationContext(), MenuActivity.class );
                 startActivity(loginIntent);
             }
         });
     }
 
-    public String getPassword() {
+    public static String getPassword() {
         return password;
     }
 
-    public String getUsername() {
+    public static String getUsername() {
         return username;
+    }
+
+    public static void setPassword(String password) {
+        LoginActivity.password = password;
+    }
+
+    public static void setUsername(String username) {
+        LoginActivity.username = username;
     }
 }
