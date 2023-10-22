@@ -3,9 +3,11 @@ package com.example.myapplication2;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 public class MenuActivity extends AppCompatActivity {
 
@@ -15,18 +17,25 @@ public class MenuActivity extends AppCompatActivity {
         setContentView(R.layout.activity_menu);
 
 
-        Button startmenu = findViewById(R.id.StartMenubutton);
-        Button start = findViewById(R.id.Startbutton);
+        Button amazon = findViewById(R.id.AmazonButton);
+        Button product = findViewById(R.id.ProductsButton);
         Button profile = findViewById(R.id.Profilebutton);
 
-        startmenu.setOnClickListener(new View.OnClickListener() {
+        amazon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(getApplicationContext(), MainActivity.class );
-                startActivity(i);
+                String amazonweb = "https://www.amazon.com/";
+                Uri link = Uri.parse(amazonweb);
+                Intent i = new Intent(Intent.ACTION_VIEW, link);
+                if(i.resolveActivity(getPackageManager()) != null){
+                    startActivity(i);
+                }else {
+                    TextView error = findViewById(R.id.errorTextView);
+                    error.setText("we can´t go to amazon.com");
+                }
             }
         });
-        start.setOnClickListener(new View.OnClickListener() {
+        product.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(getApplicationContext(), SecondActivity.class );

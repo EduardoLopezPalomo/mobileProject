@@ -7,37 +7,49 @@
     tools:context=".MenuActivity">
 
     <Button
-        android:id="@+id/StartMenubutton"
+        android:id="@+id/AmazonButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="200dp"
-        android:text="Menu"
+        android:layout_marginTop="20dp"
+        android:text="Amazon Web"
         android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/Startbutton"
-        app:layout_constraintEnd_toStartOf="@+id/Profilebutton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/ProductsButton" />
 
     <Button
         android:id="@+id/Profilebutton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="200dp"
-        android:layout_marginEnd="55dp"
+        android:layout_marginBottom="20dp"
         android:text="Profile"
         android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/Startbutton"
+        app:layout_constraintBottom_toTopOf="@+id/ProductsButton"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/Startbutton"
+        android:id="@+id/ProductsButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Start"
+        android:text="Products"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/errorTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/Profilebutton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.692" />
 </androidx.constraintlayout.widget.ConstraintLayout>
