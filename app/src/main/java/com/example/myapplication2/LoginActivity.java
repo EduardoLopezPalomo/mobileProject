@@ -29,8 +29,16 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View view) {
                 setUsername(name.getText().toString());
                 setPassword(passwordtext.getText().toString());
-                Intent loginIntent = new Intent(getApplicationContext(), MenuActivity.class );
-                startActivity(loginIntent);
+                if(username.isEmpty()){
+                    TextView error = findViewById(R.id.errorLoginTextView);
+                    error.setText("The username can not be empty");
+                }else if(password.isEmpty()){
+                    TextView error = findViewById(R.id.errorLoginTextView);
+                    error.setText("The password can not be empty");
+                }else {
+                    Intent loginIntent = new Intent(getApplicationContext(), MenuActivity.class);
+                    startActivity(loginIntent);
+                }
             }
         });
     }

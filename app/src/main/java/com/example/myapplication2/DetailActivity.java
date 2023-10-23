@@ -3,8 +3,11 @@ package com.example.myapplication2;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.PorterDuff;
+import android.graphics.drawable.LayerDrawable;
 import android.os.Bundle;
 import android.view.Display;
 import android.view.View;
@@ -15,7 +18,6 @@ import android.widget.Switch;
 import android.widget.TextView;
 
 public class DetailActivity extends AppCompatActivity {
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,14 +37,15 @@ public class DetailActivity extends AppCompatActivity {
         TextView infoText = findViewById(R.id.infoTextView);
         Switch info = findViewById(R.id.seeInfoSwitch);
         TextView valoration = findViewById(R.id.ratingTextView);
-        RatingBar rating = findViewById(R.id.buyerRatingBar);
+        RatingBar ratingBar = findViewById(R.id.buyerRatingBar);
+
 
         buyer.append(getBuyer(item));
         infoText.setText("name: " + getBuyer(item)+ "\nDate of birth: 14/11/1995\nGender: Male\nLocation: Earth");
         valoration.setText("valoration:");
         infoText.setVisibility(View.INVISIBLE);
         valoration.setVisibility(View.INVISIBLE);
-        rating.setVisibility(View.INVISIBLE);
+        ratingBar.setVisibility(View.INVISIBLE);
 
         itemText.setText(item);
         priceText.setText(price);
@@ -55,11 +58,12 @@ public class DetailActivity extends AppCompatActivity {
                 if(b){
                     infoText.setVisibility(View.VISIBLE);
                     valoration.setVisibility(View.VISIBLE);
-                    rating.setVisibility(View.VISIBLE);
+                    ratingBar.setVisibility(View.VISIBLE);
+                    ChangeColor.changeColorRating(getResources(),ratingBar);
                 }else{
                     infoText.setVisibility(View.INVISIBLE);
                     valoration.setVisibility(View.INVISIBLE);
-                    rating.setVisibility(View.INVISIBLE);
+                    ratingBar.setVisibility(View.INVISIBLE);
                 }
             }
         });
@@ -101,4 +105,5 @@ public class DetailActivity extends AppCompatActivity {
         Bitmap scaledImg = BitmapFactory.decodeResource(getResources(), pic,options);
         img.setImageBitmap(scaledImg);
     }
+
 }
