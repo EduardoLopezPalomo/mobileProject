@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.PorterDuff;
@@ -11,6 +12,7 @@ import android.graphics.drawable.LayerDrawable;
 import android.os.Bundle;
 import android.view.Display;
 import android.view.View;
+import android.webkit.SafeBrowsingResponse;
 import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.RatingBar;
@@ -73,17 +75,25 @@ public class DetailActivity extends AppCompatActivity {
         switch (item){
             case "peach": return R.drawable.peach;
             case "tomato": return R.drawable.tomato;
-            case "apple": return R.drawable.apple;
+            case "iphone": return R.drawable.apple;
             case "banana": return R.drawable.banana;
+            case "television": return R.drawable.television;
+            case "wallet": return R.drawable.wallet;
+            case "laptop": return R.drawable.laptop;
             default: return -1;
         }
     }
     private String getBuyer(String item){
+        Resources r = getResources();
+        String[] aux = r.getStringArray(R.array.buyers);
         switch (item){
-            case "peach": return "Kanan";
-            case "tomato": return "Kobe";
-            case "apple": return "Mario";
-            case "banana": return "Aragorn";
+            case "peach": return aux[0];
+            case "tomato": return aux[1];
+            case "iphone": return aux[2];
+            case "banana": return aux[3];
+            case "television": return aux[4];
+            case "wallet": return aux[5];
+            case "laptop": return aux[6];
             default: return "";
         }
     }

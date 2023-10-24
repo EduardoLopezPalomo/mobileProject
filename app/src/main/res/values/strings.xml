@@ -4,19 +4,37 @@
     <string-array name="items">
         <item>peach</item>
         <item>tomato</item>
-        <item>apple</item>
+        <item>iphone</item>
         <item>banana</item>
+        <item>television</item>
+        <item>wallet</item>
+        <item>laptop</item>
     </string-array>
     <string-array name="prices">
-        <item>$0.5</item>
-        <item>$0.76</item>
-        <item>$1.34</item>
-        <item>$0.87</item>
+        <item>$100</item>
+        <item>$2.5</item>
+        <item>$1000.99</item>
+        <item>$2.00</item>
+        <item>$2000</item>
+        <item>$10</item>
+        <item>$250</item>
     </string-array>
     <string-array name="descriptions">
-        <item>Fresh peaches from Georgia</item>
+        <item>Princess from mushroom kingdom</item>
         <item>Fresh tomatoes from Spain</item>
-        <item>Fresh apples from China</item>
+        <item>The lastest Iphone</item>
         <item>Fresh bananas from Canarias</item>
+        <item>Television Sony 40`</item>
+        <item>Channel wallet</item>
+        <item>HP laptop 14`</item>
+    </string-array>
+    <string-array name="buyers">
+        <item>Mario</item>
+        <item>Kobe</item>
+        <item>Aragorn</item>
+        <item>Ozuna</item>
+        <item>Kanan</item>
+        <item>Sidon</item>
+        <item>Petter</item>
     </string-array>
 </resources>
