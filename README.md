@@ -9,3 +9,4 @@ For running the project all you have to do is open it with android studio and ru
 After that a window with a mobile phone should appear and you will be able to use it.
 
 You can see the video demostration in this link: https://www.youtube.com/watch?v=ndG2EHqakvs or you can see it open ot the file mobilde_video_demostration.
+The learning diary is the file named: SDS_learning_diary_mobile.
