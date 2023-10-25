@@ -7,3 +7,5 @@ if you click the amazon button you go to the amazon web. But if your emulator do
 
 For running the project all you have to do is open it with android studio and running the project. Make sure that you have a configured emulator and that you are inside the app folder.
 After that a window with a mobile phone should appear and you will be able to use it.
+
+You can see the video demostration in this link: https://www.youtube.com/watch?v=ndG2EHqakvs or you can see it open ot the file mobilde_video_demostration.
